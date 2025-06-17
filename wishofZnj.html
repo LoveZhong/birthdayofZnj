@@ -24,9 +24,8 @@
             z-index: 0;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* 固定背景，防止滚动时抖动 */
+            background-attachment: fixed;
             filter: brightness(0.7);
-            transition: background-image 0.5s ease;
         }
         
         /* 装饰元素 */
@@ -53,10 +52,9 @@
             box-sizing: border-box;
         }
         
-        /* 文字容器 - 修改为透明背景 */
+        /* 文字容器 */
         .text-container {
-            background: rgba(255, 255, 255, 0.15); /* 调整透明度 */
-            /*backdrop-filter: blur(5px); /* 增加模糊效果 */
+            background: rgba(255, 255, 255, 0.15);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -76,38 +74,36 @@
         /* 文字样式 */
         .greeting {
             font-size: 2.5rem;
-            color: #ffffff; /* 改为白色文字 */
+            color: #ffffff;
             margin-bottom: 15px;
             font-weight: bold;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 增强文字阴影 */
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .message {
             font-size: 1.8rem;
-            color: #ffffff; /* 改为白色文字 */
+            color: #ffffff;
             margin-bottom: 25px;
             line-height: 1.6;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 增强文字阴影 */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .signature {
             font-size: 1.5rem;
-            color: #ffffff; /* 改为白色文字 */
+            color: #ffffff;
             font-style: italic;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 增强文字阴影 */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             position: absolute;
             bottom: 10px; 
             right: 20px;
         }
         
-        /* 自定义控制区 */
-        .controls {
+        /* 音乐控制 */
+        .music-control {
             position: fixed;
             bottom: 20px;
-            left: 20px;
+            right: 20px;
             z-index: 4;
-            display: flex;
-            gap: 10px;
         }
         
         .control-btn {
@@ -133,14 +129,6 @@
         .control-icon {
             color: #555;
             font-size: 18px;
-        }
-        
-        /* 音乐控制 */
-        .music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 4;
         }
         
         /* 响应式设计 */
@@ -169,147 +157,23 @@
             90% { opacity: 1; }
             100% { top: 100%; left: calc(10% + 80% * Math.random()); opacity: 0; }
         }
-        
-        /* 模态框样式 */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        .modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            max-width: 500px;
-            width: 90%;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        .close-modal {
-            font-size: 1.5rem;
-            color: #888;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .close-modal:hover {
-            color: #333;
-        }
-        
-        .modal-body {
-            margin-bottom: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #555;
-        }
-        
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            resize: none;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #6a11cb;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: #4a0486;
-        }
-        
-        .btn-secondary {
-            background: #eee;
-            color: #555;
-        }
-        
-        .btn-secondary:hover {
-            background: #ddd;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 背景容器 -->
-    <div class="background-container" id="background-container"></div>
+    <div class="background-container" style="background-image: url('https://i.imgs.ovh/2025/06/17/zdTce.jpeg');"></div>
     
-    <!-- 装饰元素 - 只保留星星 -->
+    <!-- 装饰元素 -->
     <div id="particles-container"></div>
     
     <!-- 内容容器 -->
     <div class="content-wrapper">
         <div class="text-container">
-            <div class="greeting" id="greeting"></div>
-            <div class="message" id="message">！</div>
-            <div class="signature" id="signature"></div>
+            <div class="greeting">柠吉</div>
+            <div class="message">生日快乐！愿你年年有今日，岁岁有今朝！</div>
+            <div class="signature">——你哥</div>
         </div>
-    </div>
-    
-    <!-- 控制按钮 -->
-    <div class="controls">
-        <button class="control-btn" id="set-image-url">
-            <i class="fas fa-link control-icon"></i>
-        </button>
-        
-        <button class="control-btn" id="edit-message">
-            <i class="fas fa-edit control-icon"></i>
-        </button>
     </div>
     
     <!-- 音乐控制 -->
@@ -323,78 +187,11 @@
     <audio id="birthday-song" loop>
         <source src="https://music.163.com/song/media/outer/url?id=1450707819.mp3" type="audio/mpeg">
     </audio>
-    
-    <!-- 编辑消息模态框 -->
-    <div class="modal" id="message-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">编辑祝福语</div>
-                <div class="close-modal" id="close-modal">&times;</div>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="greeting-input">问候语</label>
-                    <input type="text" id="greeting-input" value="">
-                </div>
-                <div class="form-group">
-                    <label for="message-input">祝福语</label>
-                    <textarea id="message-input"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="signature-input">署名</label>
-                    <input type="text" id="signature-input" value="">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="cancel-edit">取消</button>
-                <button class="btn" id="save-message">保存</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 设置图片链接模态框 -->
-    <div class="modal" id="image-url-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">设置背景图片链接</div>
-                <div class="close-image-modal" id="close-image-modal">&times;</div>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="image-url-input">图片URL</label>
-                    <input type="text" id="image-url-input" placeholder="输入图片URL">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="cancel-image">取消</button>
-                <button class="btn" id="save-image-url">保存</button>
-            </div>
-        </div>
-    </div>
 
     <script>
         // 初始化变量
-        const backgroundContainer = document.getElementById('background-container');
         const birthdaySong = document.getElementById('birthday-song');
         const musicControl = document.getElementById('musicControl');
-        const editMessageBtn = document.getElementById('edit-message');
-        const messageModal = document.getElementById('message-modal');
-        const closeModal = document.getElementById('close-modal');
-        const cancelEdit = document.getElementById('cancel-edit');
-        const saveMessage = document.getElementById('save-message');
-        const greetingInput = document.getElementById('greeting-input');
-        const messageInput = document.getElementById('message-input');
-        const signatureInput = document.getElementById('signature-input');
-        const greetingDisplay = document.getElementById('greeting');
-        const messageDisplay = document.getElementById('message');
-        const signatureDisplay = document.getElementById('signature');
-        const setImageUrlBtn = document.getElementById('set-image-url');
-        const imageUrlModal = document.getElementById('image-url-modal');
-        const closeImageModal = document.getElementById('close-image-modal');
-        const cancelImage = document.getElementById('cancel-image');
-        const saveImageUrl = document.getElementById('save-image-url');
-        const imageUrlInput = document.getElementById('image-url-input');
-        
         let isPlaying = false;
         
         // 创建星星背景
@@ -440,99 +237,9 @@
             document.removeEventListener('click', startMusic);
         });
         
-        // 打开编辑模态框
-        editMessageBtn.addEventListener('click', function() {
-            // 填充当前内容
-            greetingInput.value = greetingDisplay.textContent;
-            messageInput.value = messageDisplay.textContent;
-            signatureInput.value = signatureDisplay.textContent;
-            
-            // 显示模态框
-            messageModal.classList.add('active');
-        });
-        
-        // 关闭模态框
-        function closeModalFunc() {
-            messageModal.classList.remove('active');
-        }
-        
-        closeModal.addEventListener('click', closeModalFunc);
-        cancelEdit.addEventListener('click', closeModalFunc);
-        
-        // 保存消息
-        saveMessage.addEventListener('click', function() {
-            greetingDisplay.textContent = greetingInput.value;
-            messageDisplay.textContent = messageInput.value;
-            signatureDisplay.textContent = signatureInput.value;
-            
-            // 保存到本地存储
-            localStorage.setItem('birthdayGreeting', greetingInput.value);
-            localStorage.setItem('birthdayMessage', messageInput.value);
-            localStorage.setItem('birthdaySignature', signatureInput.value);
-            
-            closeModalFunc();
-        });
-        
-        // 打开设置图片链接模态框
-        setImageUrlBtn.addEventListener('click', function() {
-            // 填充当前内容
-            const savedImageUrl = localStorage.getItem('birthdayBackgroundUrl');
-            if (savedImageUrl) {
-                imageUrlInput.value = savedImageUrl;
-            }
-            
-            // 显示模态框
-            imageUrlModal.classList.add('active');
-        });
-        
-        // 关闭图片链接模态框
-        function closeImageModalFunc() {
-            imageUrlModal.classList.remove('active');
-        }
-        
-        closeImageModal.addEventListener('click', closeImageModalFunc);
-        cancelImage.addEventListener('click', closeImageModalFunc);
-        
-        // 保存图片链接
-        saveImageUrl.addEventListener('click', function() {
-            const imageUrl = imageUrlInput.value.trim();
-            if (imageUrl) {
-                // 设置背景图片
-                backgroundContainer.style.backgroundImage = `url(${imageUrl})`;
-                
-                // 保存到本地存储
-                localStorage.setItem('birthdayBackgroundUrl', imageUrl);
-                
-                // 关闭模态框
-                closeImageModalFunc();
-            } else {
-                alert('请输入有效的图片URL');
-            }
-        });
-        
-        // 从本地存储加载保存的数据
-        function loadSavedData() {
-            const savedImageUrl = localStorage.getItem('birthdayBackgroundUrl');
-            if (savedImageUrl) {
-                backgroundContainer.style.backgroundImage = `url(${savedImageUrl})`;
-            } else {
-                // 如果没有保存的背景图，使用默认渐变
-                backgroundContainer.style.background = 'linear-gradient(135deg, #ff99c3, #ffb3e6, #a8c8ff, #87ceeb)';
-            }
-            
-            const savedGreeting = localStorage.getItem('birthdayGreeting');
-            const savedMessage = localStorage.getItem('birthdayMessage');
-            const savedSignature = localStorage.getItem('birthdaySignature');
-            
-            if (savedGreeting) greetingDisplay.textContent = savedGreeting;
-            if (savedMessage) messageDisplay.textContent = savedMessage;
-            if (savedSignature) signatureDisplay.textContent = savedSignature;
-        }
-        
-        // 初始化
+        // 初始
         window.addEventListener('DOMContentLoaded', function() {
             createStars();
-            loadSavedData();
         });
     </script>
 </body>
